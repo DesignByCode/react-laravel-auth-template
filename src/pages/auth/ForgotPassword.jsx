@@ -4,6 +4,7 @@ import { useAuth } from '../../context/AuthContext'
 import Loader from '../../components/parts/Loader'
 import InputComponent from '../../components/form/InputComponent'
 import FlashMessage from '../../components/parts/FlashMessage'
+import GradientButton from '../../components/form/GradientButton'
 
 const ForgotPassword = () => {
   const [flash, setFlash] = useState('')
@@ -27,7 +28,7 @@ const ForgotPassword = () => {
   }
 
   return (
-    <div className="max-w-md mx-auto p-4 mt-24">
+    <div className="max-w-md mx-auto p-4 my-24">
       <div className="border bg-white shadow-lg border-gray-100 p-6 rounded space-y-4">
         {flash && <FlashMessage>Email was successfully send.</FlashMessage>}
         <p className="text-gray-400">
@@ -48,13 +49,9 @@ const ForgotPassword = () => {
             />
 
             <div className="text-center pt-1">
-              {loading ? (
-                <Loader />
-              ) : (
-                <button type="submit" className="w-full rounded px-3 py-2 font-semibold tracking-wider bg-laravel text-white">
-                  EMAIL PASSWORD RESET LINK
-                </button>
-              )}
+              <GradientButton disabled={loading} classes={'w-full'} type="submit">
+                EMAIL PASSWORD RESET LINK
+              </GradientButton>
             </div>
           </form>
         </div>

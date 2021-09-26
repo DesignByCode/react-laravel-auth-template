@@ -5,6 +5,7 @@ import Loader from '../../components/parts/Loader'
 import InputComponent from '../../components/form/InputComponent'
 import { useHistory } from 'react-router-dom'
 import useQuery from '../../hooks/useQuery'
+import GradientButton from '../../components/form/GradientButton'
 
 const ResetPassword = () => {
   const { updatePasswordResetViaEmailToken, attemptUserLogin, loading, errors, clearErrors } = useAuth()
@@ -28,7 +29,7 @@ const ResetPassword = () => {
   }
 
   return (
-    <div className="max-w-md mx-auto p-4 mt-24">
+    <div className="max-w-md mx-auto p-4 my-24">
       <div className="border bg-white shadow-lg border-gray-100 p-6 rounded space-y-4">
         <form noValidate={true} className="space-y-2" method="post" onSubmit={updatePasswordSubmit}>
           <InputComponent
@@ -67,13 +68,9 @@ const ResetPassword = () => {
           <input value={form.token} type="hidden" />
 
           <div className="text-center pt-3">
-            {loading ? (
-              <Loader />
-            ) : (
-              <button type="submit" className="w-full rounded px-3 py-2 font-semibold tracking-wider bg-laravel text-white">
-                RESET PASSWORD
-              </button>
-            )}
+            <GradientButton disabled={loading} classes={'w-full'} type="submit">
+              RESET PASSWORD
+            </GradientButton>
           </div>
         </form>
       </div>

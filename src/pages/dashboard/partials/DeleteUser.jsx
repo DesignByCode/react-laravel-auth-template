@@ -1,6 +1,8 @@
-import React from 'react'
-import Loader from '../../../components/parts/Loader'
+import React, { useState, useContext, createContext } from 'react'
 import { useAuth } from '../../../context/AuthContext'
+import PlainButton from '../../../components/form/PlainButton'
+import SwitchButton from '../../../components/form/SwitchButton'
+
 const DeleteUser = () => {
   const { loading, deleteUserAccount } = useAuth()
 
@@ -23,18 +25,10 @@ const DeleteUser = () => {
             information that you wish to retain.
           </p>
         </div>
-        <div className="bg-gray-50 px-5 py-2.5 flex justify-start">
-          {loading ? (
-            <Loader />
-          ) : (
-            <button
-              type="button"
-              onClick={handleRemoveAccount}
-              className="rounded px-3 py-1 font-semibold tracking-wider bg-red-500 hover:bg-red-400 text-white"
-            >
-              DELETE USER
-            </button>
-          )}
+        <div className="bg-gray-50 px-5 py-2.5 flex justify-between">
+          <PlainButton disabled={loading} type={`button`} theme={`danger`} onClick={handleRemoveAccount}>
+            DELETE
+          </PlainButton>
         </div>
       </div>
     </>

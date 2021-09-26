@@ -17,17 +17,20 @@ const NavBar = () => {
   }
 
   return (
-    <nav className="w-full bg-gray-900 border-b border-black">
+    <nav className=" bg-gray-900 border-b border-black">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4">
-        <Link className="font-black text-3xl text-laravel tracking-tight my-4" to={'/'}>
-          Laravel<span className="bg-gradient-to-b from-gray-200 to-gray-100 text-transparent bg-clip-text">Auth</span>
+        <Link
+          className="font-black text-3xl bg-gradient-to-b from-primary-500 bg-clip-text text-transparent to-blue-500 hover:to-blue-600  tracking-tight my-4"
+          to={'/'}
+        >
+          Laravel<span className="bg-gradient-to-b from-gray-200 to-gray-100 bg-clip-text">Auth</span>
         </Link>
 
-        <button className="w-10 h-10 flex justify-center items-center rounded text-laravel border border-laravel md:hidden">
+        <button className="w-10 h-10 flex justify-center items-center rounded text-primary-500 border border-primary-500 md:hidden">
           <HiMenuAlt3 size={22} />
         </button>
 
-        <div className="md:flex space-x-2  text-laravel hidden ">
+        <div className="md:flex space-x-2  text-primary-500 hidden ">
           {navLinks.map((link, index) => (
             <NavLink key={index.toString()} exact className="nav-link " activeClassName="nav-link-active" to={link.path}>
               {link.name}

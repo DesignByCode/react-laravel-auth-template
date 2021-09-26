@@ -8,14 +8,15 @@
 
     body {
         background-color: theme('colors.gray.100');
+        padding-top: 4rem
     }
 
     .nav-link {
-        @apply px-3 font-semibold rounded flex h-12 items-center hover:bg-laravel hover:text-gray-900;
+        @apply px-3 font-semibold rounded flex h-12 items-center hover:text-gray-900 bg-gradient-to-b hover:from-primary-500  hover:to-blue-500 ;
     }
 
     .nav-link-active {
-        @apply bg-laravel text-gray-900;
+        @apply bg-gradient-to-b from-primary-500  to-blue-500  text-gray-900;
     }
 
     .lds-ellipsis {
@@ -30,7 +31,7 @@
       width: 13px;
       height: 13px;
       border-radius: 50%;
-      background-color: theme('colors.laravel');
+      background-color: theme('colors.primary.500');
       animation-timing-function: cubic-bezier(0, 1, 1, 0);
     }
     .lds-ellipsis div:nth-child(1) {

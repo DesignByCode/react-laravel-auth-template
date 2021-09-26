@@ -4,6 +4,7 @@ import { useAuth } from '../../context/AuthContext'
 import Loader from '../../components/parts/Loader'
 import InputComponent from '../../components/form/InputComponent'
 import { Link, useHistory } from 'react-router-dom'
+import GradientButton from '../../components/form/GradientButton'
 
 const Register = () => {
   const { registerNewUser, loading, errors, clearErrors } = useAuth()
@@ -24,7 +25,7 @@ const Register = () => {
   }
 
   return (
-    <div className="max-w-md mx-auto p-4 mt-24">
+    <div className="max-w-md mx-auto p-4 my-24">
       <div className="border bg-white shadow-lg border-gray-100 p-6 rounded space-y-4">
         <form noValidate={true} className="space-y-2" method="post" onSubmit={loginSubmit}>
           <InputComponent
@@ -71,16 +72,10 @@ const Register = () => {
           />
 
           <div className="pt-3 flex justify-end items-center space-x-3 ">
-            <Link className="text-laravel italic font-semibold text-opacity-70 hover:underline hover:text-opacity-100" to={`/login`}>
+            <Link className="text-primary-500 italic font-semibold text-opacity-70 hover:underline hover:text-opacity-100" to={`/login`}>
               Already registered?
             </Link>
-            {loading ? (
-              <Loader />
-            ) : (
-              <button type="submit" className="rounded px-3 py-2 font-semibold tracking-wider bg-laravel text-white">
-                REGISTER
-              </button>
-            )}
+            <GradientButton type="submit">REGISTER</GradientButton>
           </div>
         </form>
       </div>
