@@ -1,5 +1,5 @@
 {
-  "name": "react-frontend",
+  "name": "react-laravel-auth-template",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
